@@ -43,9 +43,10 @@ class QuestionsController < ApplicationController
   # POST /questions.xml
   def create
     @question = Question.new(params[:question])
+    @expectation = @question.expectation
 
     respond_to do |format|
-      if @question.save
+      if @expectation.save
         format.html { redirect_to(@question.expectation, :notice => 'Question was successfully created.') }
         format.xml  { render :xml => @question, :status => :created, :location => @question }
       else
