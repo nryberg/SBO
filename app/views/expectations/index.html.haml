@@ -1,0 +1,18 @@
+%h1 Listing expectations
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @expectations.each do |expectation|
+    %tr
+      %td= expectation.expected
+      %td= link_to 'Show', expectation
+      %td= link_to 'Edit', edit_expectation_path(expectation)
+      %td= link_to 'Destroy', expectation, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Expectation', new_expectation_path

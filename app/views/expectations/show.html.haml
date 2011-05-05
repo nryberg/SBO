@@ -1,0 +1,10 @@
+%p#notice= notice
+%h1= @expectation.expected
+
+= render :partial => 'question', :collection => @expectation.questions
+
+= link_to 'Add Question', new_expectation_question_path(@expectation, @question)
+
+= link_to 'Edit', edit_expectation_path(@expectation)
+\|
+= link_to 'Back', expectations_path

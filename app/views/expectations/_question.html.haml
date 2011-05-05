@@ -1,0 +1,5 @@
+%tr
+  %td= question.question
+  %td= link_to 'Change', edit_expectation_question_path(@expectation, question)
+  %td= link_to 'Drop', [@expectation, question], :confirm => 'Are you sure?', :method => :delete
+  /%td= link_to meeting.meeting_date_pretty, club_meeting_path(@club, meeting) 

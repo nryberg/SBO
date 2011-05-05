@@ -1,0 +1,10 @@
+= semantic_form_for @expectation do |f|
+  -if @expectation.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@expectation.errors.count, "error")} prohibited this expectation from being saved:"
+      %ul
+        - @expectation.errors.full_messages.each do |msg|
+          %li= msg
+  = f.inputs :expected
+  .actions
+    = f.submit 'Save'

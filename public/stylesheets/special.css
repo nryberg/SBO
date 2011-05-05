@@ -1,0 +1,30 @@
+.member_background {
+  background-color: #C19A7B;
+}
+
+.meeting_background {
+  background-color: #F3933C;
+}
+
+.club_background {
+  background-color: #88BEE4;
+}
+
+.role_background {
+  background-color: #FFFFFF;
+}
+
+#header_box {
+  font-size: 200%;
+}
+.edit_label {
+  font-size: 150%;
+}
+
+#content_box {
+  padding-top: 15px;
+}
+
+.side_entry {
+  padding-left: 10px;
+}

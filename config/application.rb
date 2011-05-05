@@ -38,6 +38,12 @@ module Sbo
     # config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
 
     # Configure the default encoding used in templates for Ruby 1.9.
+    
+    config.generators do |g|
+        g.orm             :mongo_mapper
+        g.template_engine :haml
+        g.test_framework  :test_unit, :fixture => true
+    end
     config.encoding = "utf-8"
 
     # Configure sensitive parameters which will be filtered from the log file.
