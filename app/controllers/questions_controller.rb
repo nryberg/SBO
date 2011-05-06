@@ -24,9 +24,11 @@ class QuestionsController < ApplicationController
   # GET /questions/new
   # GET /questions/new.xml
   def new
+    
     @expectation = Expectation.find(params[:expectation_id])
     @question = @expectation.questions.build
-    
+    @question.expectation_id = params[:expectation_id]
+    p @question.expectation
 
     respond_to do |format|
       format.html # new.html.erb
@@ -43,7 +45,11 @@ class QuestionsController < ApplicationController
   # POST /questions.xml
   def create
     @question = Question.new(params[:question])
-    @expectation = @question.expectation
+    p params[:expectation_id]
+    p @question.expectation
+    @expectation = Expectation.first(params[:expectation_id])
+    @expectation.questions << @question
+    
 
     respond_to do |format|
       if @expectation.save
